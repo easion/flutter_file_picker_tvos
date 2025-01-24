@@ -18,7 +18,9 @@
 @property (nonatomic) UIDocumentPickerViewController *documentPickerController;
 @property (nonatomic) UIDocumentInteractionController *interactionController;
 #endif
+#ifdef PICKER_AUDIO
 @property (nonatomic) MPMediaPickerController *audioPickerController;
+#endif
 @property (nonatomic) NSArray<NSString *> * allowedExtensions;
 @property (nonatomic) BOOL loadDataToMemory;
 @property (nonatomic) BOOL allowCompression;

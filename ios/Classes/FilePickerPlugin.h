@@ -4,7 +4,13 @@
 #import <Photos/Photos.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-#if PICKER_MEDIA && (__has_include(<PhotosUI/PHPicker.h>) || __has_include("PHPicker.h"))
+#if defined(TARGET_OS_TV)
+#undef PICKER_MEDIA
+//#undef PICKER_AUDIO
+#undef PICKER_DOCUMENT
+#endif
+
+#if defined(PICKER_MEDIA) && (__has_include(<PhotosUI/PHPicker.h>) || __has_include("PHPicker.h"))
 #define PHPicker
 #import <PhotosUI/PHPicker.h>
 #endif
